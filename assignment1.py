@@ -13,3 +13,7 @@ Your program should ask the user for
 * The program will calculate the amount of interest earned and display it.
 * Appropriate formatting of the output is a requirement for this assignment
 """
+#python3
+I=float(input("Enter initial investment"))
+annual=float(input("Enter annual interest rate (%)"))
+time=float(input)
