@@ -14,6 +14,33 @@ Your program should ask the user for
 * Appropriate formatting of the output is a requirement for this assignment
 """
 #python3
-I=float(input("Enter initial investment"))
-annual=float(input("Enter annual interest rate (%)"))
-time=float(input)
+def CoSI():
+  try:
+    init=float(input("Enter initial investment"))
+
+    an_rate=float(input("Enter annual interest rate %"))
+
+    anrate_decimal = an_rate / 100.0
+
+    timetype= (input("Enter type of time period (years, months or days)")).strip().lower()
+    time = float(input("Enter length of time"))
+
+    if timetype == 'months':
+      time /= 12.0
+  
+    elif timetype == 'days':
+     time /= 365.0
+  
+    interest = init * anrate_decimal * time
+
+    print("simple Interest Calculation")
+    print(f"Initial Investment amount (i): ${init:.2f}")
+    print(f"Annual interest rate (r): {an_rate:.2f}%")
+    print(f"Length of time (t): {time:.2f} years")
+    print(f"Simple Interest (I) ${interest:.2f}")
+
+  except ValueError:
+    print("Error")
+
+if __name__ == "__main__":
+    CoSI()

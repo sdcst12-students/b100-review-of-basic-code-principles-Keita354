@@ -22,3 +22,31 @@ rate: 5%
 10 years
 final balance: 1320.68
 """
+def calculate_while():
+    try:
+        an_investment = float(input("Enter the annual investment: $"))
+        an_rate = float(input("Enter the annual interest rate (%): "))
+        num_years = int(input("Enter the number of years: "))
+
+        rate_decimal = an_rate / 100.0
+
+        balance = 0.0
+
+        year = 1
+
+        while year <= num_years:
+            
+            balance += an_investment
+
+            interest = balance * rate_decimal
+            balance += interest
+
+            print(f"Year {year}: ${balance:.2f}")
+
+            year += 1
+
+        print(f"Final balance after {num_years} years: ${balance:.2f}")
+    except ValueError:
+        print("Invalid input.") 
+if __name__ == "__main__":
+    calculate_while()
